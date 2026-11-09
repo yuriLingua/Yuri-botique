@@ -2,6 +2,8 @@ services:
   - type: web
     name: yuri-araujo-boutique
     runtime: node
+    plan: free
+    region: oregon
     buildCommand: npm ci --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /healthz

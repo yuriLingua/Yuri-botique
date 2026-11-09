@@ -4,6 +4,12 @@ Projeto da loja de sapatos e joias de Yuri Araújo, preparado para repositório 
 
 Este pacote contém o código e as configurações. O banco de produção ainda precisa ser conectado e a aplicação ainda precisa ser publicada no Render.
 
+## Endereço da loja
+
+A aplicação está configurada para `https://yuri-botique.onrender.com/`. Esse endereço fica disponível após a publicação no Render e a configuração das conexões do Neon e do acesso administrativo.
+
+O GitHub Pages em `https://yurilingua.github.io/yuri-botique/` encaminha para a aplicação no Render. O arquivo `index.html` na raiz cuida desse encaminhamento; a interface da loja é compilada a partir de `client/index.html`.
+
 ## Comece por aqui
 
 1. Extraia o ZIP e envie os arquivos para o repositório: [GUIA-GIT.md](GUIA-GIT.md).
