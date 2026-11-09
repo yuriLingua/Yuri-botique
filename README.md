@@ -2,11 +2,14 @@
 
 Projeto da loja de sapatos e joias de Yuri Araújo, preparado para repositório Git, hospedagem **Render** e banco **PostgreSQL no Neon**.
 
-Este pacote contém o código e as configurações. O banco de produção ainda precisa ser conectado e a aplicação ainda precisa ser publicada no Render.
+Este repositório contém o código e as configurações da loja. A aplicação está publicada no Render e conectada ao PostgreSQL no Neon. Os dados de acesso ficam nas variáveis privadas do serviço Render.
 
 ## Endereço da loja
 
-A aplicação está configurada para `https://yuri-botique.onrender.com/`. Esse endereço fica disponível após a publicação no Render e a configuração das conexões do Neon e do acesso administrativo.
+- **Loja:** [yuri-botique.onrender.com](https://yuri-botique.onrender.com/)
+- **Administração:** [yuri-botique.onrender.com/admin](https://yuri-botique.onrender.com/admin)
+
+O administrador entra com o e-mail configurado em `ADMIN_EMAIL` e a senha guardada em `ADMIN_PASSWORD` nas variáveis do Render.
 
 O GitHub Pages em `https://yurilingua.github.io/yuri-botique/` encaminha para a aplicação no Render. O arquivo `index.html` na raiz cuida desse encaminhamento; a interface da loja é compilada a partir de `client/index.html`.
 
