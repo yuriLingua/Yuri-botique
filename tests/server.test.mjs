@@ -22,6 +22,15 @@ test('Render Node: loja → login → API → PostgreSQL → catálogo → logou
       const response = await get(path);
       assert.equal(response.status, 200);
       assert.equal(response.headers.get('cache-control'), 'no-store');
+      if (path === '/admin') {
+        const policy = new Map(response.headers.get('content-security-policy').split(';').map((directive) => {
+          const [name, ...sources] = directive.trim().split(/\s+/);
+          return [name, sources];
+        }));
+        assert.ok(policy.get('img-src').includes('blob:'), 'A prévia da foto selecionada precisa permitir URLs blob:');
+        assert.deepEqual(policy.get('script-src'), ["'self'"], 'A permissão para fotos não pode liberar scripts blob:');
+        assert.deepEqual(policy.get('object-src'), ["'none'"]);
+      }
       assert.match(await response.text(), /Yuri Araújo Boutique/);
     }
     assert.equal((await get('/healthz')).status, 200);
